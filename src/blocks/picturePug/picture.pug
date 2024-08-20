@@ -29,41 +29,40 @@ mixin picture(fileName, isMobileFileName)
       source(
         type="image/webp"
         srcset=`${file.getPath(fileTitle + '-mob', "webp")} `
-        alt=fileName
         class="lazyload" 
         media="(max-width: 768px)"  
       )
       source(
+        type="image/jpeg"
         srcset=`${file.getPath(fileTitle + '-mob', "jpg")} `
-        alt=fileName
         class="lazyload" 
         media="(max-width: 768px)" 
       )
       source(
+        type="image/png"
         srcset=`${file.getPath(fileTitle + '-mob', "png")} `
-        alt=fileName
         class="lazyload" 
         media="(max-width: 768px)" 
       )
     source(
       type="image/webp"
       srcset=`${file.getPath(fileTitle, "webp")} `
-      alt=fileName
       class="lazyload" 
     )
     source(
+      type="image/jpeg"
       srcset=`${file.getPath(fileTitle, "jpg")} `
-      alt=fileName
       class="lazyload" 
     )
     source(
+      type="image/png"
       srcset=`${file.getPath(fileTitle, "png")} `
-      alt=fileName
       class="lazyload" 
     )
 
     img.picture__img(
       class="lazyload" 
+      src=`${file.getPath(fileTitle, fileExtension)}`
       data-src=`${file.getPath(fileTitle, fileExtension)}`
       alt=fileName
     )
